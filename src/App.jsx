@@ -13,9 +13,9 @@ import Cart from "./Cart";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index element={<>HOME</>} />
-      <Route path="products" element={<Products />} />
+      <Route index element={<Products />} />
       <Route path="cart" element={<Cart />} />
+      <Route path="*" element={<Products />} />
     </Route>,
   ),
 );

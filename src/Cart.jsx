@@ -46,7 +46,8 @@ export default function Cart() {
 
   return (
     <>
-      CART <button onClick={() => clearCart()}>clear</button>
+      <h2>CART</h2>
+      <button onClick={() => clearCart()}>clear</button>
       {cart.length > 0 ? cartEl : <p>Cart is empty</p>}
       <hr />
       <div>
