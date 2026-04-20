@@ -16,6 +16,10 @@ button {
   color: white;
 }
 
+button {
+  cursor: pointer;
+}
+
 .buttons {
   display: inline-flex;
   align-items: center;
@@ -49,7 +53,7 @@ button {
 }
 
 .container {
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 10px;
 }
@@ -66,4 +70,11 @@ header a {
 
 header a:hover {
   opacity: 0.5;
+}
+
+.searchBar {
+  width: 250px;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 5px;
 }
