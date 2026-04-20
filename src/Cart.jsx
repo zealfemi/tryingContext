@@ -1,13 +1,7 @@
-import { useState, useEffect } from "react";
 import { UseCartContext } from "./CartContext";
 
 export default function Cart() {
   const { cart, dispatch } = UseCartContext();
-  const [cartList, setCartList] = useState([]);
-
-  useEffect(() => {
-    setCartList(cart);
-  }, [cart]);
 
   const incQuan = (product) => {
     dispatch({ type: "Increase", product });
@@ -25,13 +19,24 @@ export default function Cart() {
     dispatch({ type: "Clear", product: undefined });
   };
 
-  const cartEl = cartList.map((product) => {
+  function totalItems() {
+    return cart.reduce((total, product) => total + product.quantity, 0);
+  }
+
+  function totalPrice() {
+    return cart.reduce(
+      (total, product) => total + product.price * product.quantity,
+      0,
+    );
+  }
+
+  const cartEl = cart.map((product) => {
     return (
       <div key={product.id}>
         <h3>
           {product.name} <small>x {product.quantity}</small>
         </h3>
-        <p>${product.price}</p>
+        <p>${product.price * product.quantity}</p>
         <button onClick={() => incQuan(product)}>+</button>
         <button onClick={() => decQuan(product)}>-</button>
         <button onClick={() => removeProd(product)}>x</button>
@@ -42,7 +47,12 @@ export default function Cart() {
   return (
     <>
       CART <button onClick={() => clearCart()}>clear</button>
-      {cartList.length > 0 ? cartEl : <p>Cart is empty</p>}
+      {cart.length > 0 ? cartEl : <p>Cart is empty</p>}
+      <hr />
+      <div>
+        <p>Items: {totalItems()}</p>
+        <p>Total: ${totalPrice()}</p>
+      </div>
     </>
   );
 }
