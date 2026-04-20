@@ -7,6 +7,46 @@ body {
   font-optical-sizing: auto;
 }
 
+button {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.buttons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.buttons span {
+  width: 30px;
+  text-align: center;
+}
+
+.buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+}
+
+.remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+}
+
 .container {
   max-width: 700px;
   margin: 0 auto;

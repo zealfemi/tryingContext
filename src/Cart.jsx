@@ -37,9 +37,14 @@ export default function Cart() {
           {product.name} <small>x {product.quantity}</small>
         </h3>
         <p>${product.price * product.quantity}</p>
-        <button onClick={() => incQuan(product)}>+</button>
-        <button onClick={() => decQuan(product)}>-</button>
-        <button onClick={() => removeProd(product)}>x</button>
+        <span className="buttons">
+          <button onClick={() => incQuan(product)}>+</button>
+          <span>{product.quantity}</span>
+          <button onClick={() => decQuan(product)}>-</button>
+        </span>
+        <button className="remove" onClick={() => removeProd(product)}>
+          x
+        </button>
       </div>
     );
   });
