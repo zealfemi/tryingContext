@@ -1,3 +1,10 @@
+const Storage = (cartItems) => {
+  localStorage.setItem(
+    "gbackieStoreCart",
+    JSON.stringify(cartItems.length > 0 ? cartItems : []),
+  );
+};
+
 const CartReducer = (state, action) => {
   let index = -1;
 
@@ -41,6 +48,7 @@ const CartReducer = (state, action) => {
   }
 
   state = newCart;
+  Storage(state);
 
   return state;
 };

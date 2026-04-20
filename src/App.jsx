@@ -8,13 +8,13 @@ import {
 
 import Layout from "./Layout";
 import Products from "./Products";
-import Cart, { Loader as CartLoader } from "./Cart";
+import Cart from "./Cart";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />} loader={CartLoader}>
+    <Route path="/" element={<Layout />}>
       <Route index element={<Products />} />
-      <Route path="cart" element={<Cart />} loader={CartLoader} />
+      <Route path="cart" element={<Cart />} />
       <Route path="*" element={<Products />} />
     </Route>,
   ),

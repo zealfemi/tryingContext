@@ -21,8 +21,9 @@ export const UseCartContext = () => {
 
 const CartContextProvider = ({ children }) => {
   const localCart = localStorage.getItem("gbackieStoreCart")
-    ? localStorage.getItem("gbackieStoreCart")
+    ? JSON.parse(localStorage.getItem("gbackieStoreCart"))
     : [];
+
   const [cart, dispatch] = useReducer(CartReducer, localCart);
 
   return <CartContext value={{ cart, dispatch }}>{children}</CartContext>;

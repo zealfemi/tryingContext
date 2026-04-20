@@ -1,12 +1,5 @@
 import { UseCartContext } from "./CartContext";
 
-export function Loader() {
-  const cart = localStorage.getItem("gbackieStoreCart");
-  if (cart) {
-    return cart;
-  }
-}
-
 export default function Cart() {
   const { cart, dispatch } = UseCartContext();
 
@@ -55,6 +48,15 @@ export default function Cart() {
       </div>
     );
   });
+
+  if (!cart) {
+    return (
+      <>
+        <h2>CART</h2>
+        <p>Cart is empty</p>
+      </>
+    );
+  }
 
   return (
     <>
