@@ -17,6 +17,7 @@ export default function Cart() {
 
   const clearCart = () => {
     dispatch({ type: "Clear", product: undefined });
+    localStorage.removeItem("gbackieStoreCart");
   };
 
   function totalItems() {
