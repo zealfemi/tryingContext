@@ -5,6 +5,7 @@ body {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
+  background-color: whitesmoke;
 }
 
 button {
@@ -37,7 +38,7 @@ button {
   font-weight: bold;
 }
 
-.remove {
+.removeBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -61,4 +62,8 @@ header {
 
 header a {
   color: inherit;
+}
+
+header a:hover {
+  opacity: 0.5;
 }

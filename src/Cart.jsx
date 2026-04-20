@@ -42,7 +42,7 @@ export default function Cart() {
           <span>{product.quantity}</span>
           <button onClick={() => decQuan(product)}>-</button>
         </span>
-        <button className="remove" onClick={() => removeProd(product)}>
+        <button className="removeBtn" onClick={() => removeProd(product)}>
           x
         </button>
       </div>
