@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import { UseCartContext } from "./CartContext";
 import SearchBar from "./SearchBar";
 
@@ -9,8 +9,8 @@ export default function Layout() {
     <main className="container">
       <h1>Gbackie Store</h1>
       <header>
-        <Link to="..">Home</Link>
-        <Link to="cart">Cart ({cart.length})</Link>
+        <NavLink to="..">Home</NavLink>
+        <NavLink to="cart">Cart ({cart.length})</NavLink>
       </header>
       <SearchBar />
 
